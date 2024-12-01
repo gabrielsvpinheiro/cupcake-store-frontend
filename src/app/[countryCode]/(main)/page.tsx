@@ -6,9 +6,9 @@ import { getCollectionsWithProducts } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
 export const metadata: Metadata = {
-  title: "Medusa Next.js Starter Template",
+  title: "Cupcake Store",
   description:
-    "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
+    "The best cupcakes in town!",
 }
 
 export default async function Home({
@@ -26,10 +26,23 @@ export default async function Home({
   return (
     <>
       <Hero />
-      <div className="py-12">
-        <ul className="flex flex-wrap justify-center gap-6">
-          <FeaturedProducts collections={collections} region={region} />
-        </ul>
+      <div className="flex flex-col items-center py-12">
+        <div className="flex flex-row items-center justify-center gap-12">
+          <div className="max-w-md">
+            <h2 className="text-2xl font-bold mb-4">Welcome to Cupcake Store</h2>
+            <p className="text-lg">
+              Discover the best cupcakes in town! Our cupcakes are made with the finest ingredients and baked to perfection. Whether you're looking for a sweet treat or a special gift, we have something for everyone.
+            </p>
+          </div>
+          <div>
+            <img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/03/14/1547226531-receitas-de-cupcakes-e-muffins-para-vender.jpg" alt="Cupcake" className="w-64 h-64 object-cover" />
+          </div>
+        </div>
+        <div className="py-12">
+          <ul className="flex flex-wrap justify-center gap-6">
+            <FeaturedProducts collections={collections} region={region} />
+          </ul>
+        </div>
       </div>
     </>
   )
